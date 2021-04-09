@@ -1,5 +1,4 @@
 package address.book;
-import address.book.Contact;
 
 public class Main {
 	public static void main(String[] args) {
@@ -7,5 +6,10 @@ public class Main {
 		
 		Contact storeValue = new Contact("john", "kennedy", "Gauhati", "Assam", "xyz14@gmail.in", 78325, 100);
 		storeValue.Display();
+		
+		Contact enter = new Contact(null,null,null,null,null,0,0);
+		enter.NewContact();
+		
+		
 	}
 }
