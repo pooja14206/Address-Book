@@ -8,7 +8,10 @@ public class Main {
 		storeValue.Display();
 
 		AddContact displayContact = new AddContact();
-		displayContact.NewContact();
-
+		displayContact.add();
+		
+		AddContact editedContact = new AddContact();
+		editedContact.edit();
+		//displayContact.NewContact();
 	}
 }
