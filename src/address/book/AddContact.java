@@ -10,9 +10,11 @@ public class AddContact {
 	List list = new ArrayList();
 
 	public void add() {
+		System.out.println("enter the number of people you wnt to add in addressbook");
+		int numberOfUser = scanner.nextInt();
 
 		System.out.println("Add 2 new Contact to ADDRESS BOOK:------");
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < numberOfUser; i++) {
 			Contact person = new Contact();
 			System.out.println("First Name: ");
 			String firstName = scanner.next();
