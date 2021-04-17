@@ -95,5 +95,4 @@ public class Contact {
 				+ ", email=" + email + ", zip=" + zip + ", phoneNo=" + phoneNo + "]";
 	}
 
-
 }
