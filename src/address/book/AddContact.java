@@ -104,7 +104,6 @@ public class AddContact {
 
 			if (fname.equals(person.getFirstName())) {
 				list.remove(person);
-
 			}
 		}
 	}
