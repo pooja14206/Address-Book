@@ -43,7 +43,7 @@ public class AddContact {
 			person.setPhoneNo(phoneNo);
 
 			list.add(person);
-			}
+		}
 		System.out.println(list);
 	}
 
@@ -95,4 +95,17 @@ public class AddContact {
 
 	}
 
+	public void delete() {
+		System.out.println("Enter your First name:");
+		String fname = scanner.next();
+		Iterator iterator = list.iterator();
+		while (iterator.hasNext()) {
+			Contact person = (Contact) iterator.next();
+
+			if (fname.equals(person.getFirstName())) {
+				list.remove(person);
+
+			}
+		}
+	}
 }

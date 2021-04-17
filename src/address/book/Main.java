@@ -12,11 +12,14 @@ public class Main {
 		AddContact displayContact = new AddContact();
 		displayContact.add();
 		
-		//AddContact editedContact = new AddContact();
+		
 		displayContact.edit();
 		List values = displayContact.list;
-		System.out.println(values);
+		System.out.println("List after edit: " + values);
+		displayContact.delete();
+		List valuesAfterDelete = displayContact.list;
+		System.out.println("List After Deletion: " + valuesAfterDelete);
 		
-		//displayContact.NewContact();
+	
 	}
 }
