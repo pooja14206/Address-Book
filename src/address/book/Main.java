@@ -1,5 +1,7 @@
 package address.book;
 
+import java.util.List;
+
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("Wellcome to Address Book program.");
@@ -10,8 +12,11 @@ public class Main {
 		AddContact displayContact = new AddContact();
 		displayContact.add();
 		
-		AddContact editedContact = new AddContact();
-		editedContact.edit();
+		//AddContact editedContact = new AddContact();
+		displayContact.edit();
+		List values = displayContact.list;
+		System.out.println(values);
+		
 		//displayContact.NewContact();
 	}
 }

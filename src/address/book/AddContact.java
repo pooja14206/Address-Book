@@ -7,75 +7,86 @@ import java.util.Scanner;
 
 public class AddContact {
 	Scanner scanner = new Scanner(System.in);
-	ArrayList<Contact> list = new ArrayList<Contact>();
-	Contact person = new Contact();
+	List list = new ArrayList();
 
 	public void add() {
 
+		System.out.println("Add 2 new Contact to ADDRESS BOOK:------");
 		for (int i = 0; i < 2; i++) {
-			System.out.println("enter first name");
-			String fname = scanner.next();
-			person.setFirstName(fname);
+			Contact person = new Contact();
+			System.out.println("First Name: ");
+			String firstName = scanner.next();
+			person.setFirstName(firstName);
 
-			System.out.println("Enter the Last name:");
-			String lname = scanner.next();
-			person.setLastName(lname);
+			System.out.println("Last Name: ");
+			String lastName = scanner.next();
+			person.setLastName(lastName);
 
-			System.out.println("Enter the Phone Number:");
-			int phone = (int) scanner.nextLong();
-			person.setPhoneNo(phone);
-
-			System.out.println("Enter the City:");
+			System.out.println("City: ");
 			String city = scanner.next();
 			person.setCity(city);
 
-			System.out.println("Enter the Zip:");
-			int zip = (int) scanner.nextLong();
-			person.setZip(zip);
-
-			System.out.println("Enter the State:");
+			System.out.println("State: ");
 			String state = scanner.next();
 			person.setState(state);
 
-			System.out.println("FirstName: " + fname + "\nLastName: " + lname + "\nCity: " + city + "\nState: " + state
-					+ "\nZip:" + zip + "\nPhone Number: " + phone);
-		}
+			System.out.println("EmailID: ");
+			String email = scanner.next();
+			person.setEmail(email);
+
+			System.out.println("Zip: ");
+			int zip = scanner.nextInt();
+			person.setZip(zip);
+
+			System.out.println("PhoneNumber: ");
+			int phoneNo = scanner.nextInt();
+			person.setPhoneNo(phoneNo);
+
+			list.add(person);
+			}
+		System.out.println(list);
 	}
-	
+
 	public void edit() {
 		System.out.println("Enter your First name:");
 		String fname = scanner.next();
+		List list = this.list;
 
-		Iterator<Contact> iterator = list.listIterator();
+		Iterator iterator = list.iterator();
 
 		while (iterator.hasNext()) {
-			Contact person = iterator.next();
+			Contact person = (Contact) iterator.next();
 
 			if (fname.equals(person.getFirstName())) {
-		
+
 				System.out.println("Choose field you want to add:");
-				System.out
-						.println("1.Last Name\t2.Phone Number\t3.City\t4.Zip\t5. State");
+				System.out.println("1.Last Name\t2.Phone Number\t3.City\t4.Zip\t5. State");
+
 				switch (scanner.nextInt()) {
 				case 1:
 					System.out.println("Re-Correct your lastname");
-					person.setLastName(scanner.next());
+					person.lastName = scanner.next();
+					System.out.println("new lastname: " + person.lastName);
 					break;
 				case 2:
 					System.out.println("Re-Correct your Phone Number");
-					person.setPhoneNo((int) scanner.nextLong());
+					person.phoneNo = scanner.nextInt();
+					System.out.println("new PhoneNo: " + person.phoneNo);
 					break;
 				case 3:
 					System.out.println("Re-Correct your City");
-					person.setCity(scanner.next());
+					person.city = scanner.next();
+					System.out.println("new city: " + person.city);
 					break;
 				case 4:
 					System.out.println("Re-Correct your Zip");
-					person.setZip((int) scanner.nextLong());
+					person.zip = scanner.nextInt();
+					System.out.println("new zip: " + person.zip);
 					break;
 				case 5:
 					System.out.println("Re-Correct your State");
-					person.setState(scanner.next());
+					person.state = scanner.next();
+					System.out.println("new state: " + person.state);
 					break;
 				}
 
@@ -83,4 +94,5 @@ public class AddContact {
 		}
 
 	}
+
 }
